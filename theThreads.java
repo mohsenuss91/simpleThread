@@ -1,14 +1,13 @@
+import java.util.*;
 class theThreads implements Runnable 
 {
-	int timesRun = 0; 
+	volatile int timesRun = 0; 
 	public theThreads()
 	{
 	}
-	public synchronized void run()
+	public void run()
 	{
-		int temp = timesRun; 
-		temp++;
-		timesRun = temp; 
+		timesRun++; 
 		System.out.println(timesRun);
 	}
 }
